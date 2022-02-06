@@ -45,6 +45,8 @@ function _LAZYGIT_TOGGLE()
 	lazygit:toggle()
 end
 
+vim.api.nvim_set_keymap('n', '<C-g>',':lua _LAZYGIT_TOGGLE()<cr>', {noremap = true})
+
 local node = Terminal:new({ cmd = "node", hidden = true })
 
 function _NODE_TOGGLE()
