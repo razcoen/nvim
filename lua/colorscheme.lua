@@ -69,3 +69,6 @@ if EcoVim.colorscheme == 'gruvbox' then
   -- Change color of floating popup border
   vim.highlight.link('FloatBorder', EcoVim.ui.float.highlight, true);
 end
+
+-- Transparent background
+vim.cmd('hi Normal guibg=NONE')
