@@ -44,8 +44,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
+
+  use {'numToStr/Comment.nvim', config = "require('plugins.comment')"}
 
   use {"windwp/nvim-autopairs", config = "require('plugins.autopairs')"}
 
@@ -58,6 +59,7 @@ return packer.startup(function(use)
   use {"akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')"}
   use "voldikss/vim-floaterm"
 
+  use {'romgrk/barbar.nvim', config = "require('plugins.barbar')"}
   use "moll/vim-bbye"
   use "ahmedkhalf/project.nvim"
   use {"lewis6991/impatient.nvim", config = "require('plugins.impatient')"}
@@ -102,7 +104,16 @@ return packer.startup(function(use)
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
 
   -- Telescope
-  use {"nvim-telescope/telescope.nvim", config = "require('plugins.telescope')"}
+  use {'nvim-telescope/telescope.nvim',
+      config = "require('plugins.telescope')",
+      requires = {
+        {'nvim-lua/popup.nvim'},
+        {'nvim-lua/plenary.nvim'},
+        {'nvim-telescope/telescope-fzf-native.nvim'}
+      }
+    }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'cljoly/telescope-repo.nvim'}
 
   -- Treesitter
   use {

@@ -58,13 +58,12 @@ vim.wo.colorcolumn = "99999"
 -- vim.opt.listchars:append "eol:↴"
 
 indent_blankline.setup({
-	-- show_end_of_line = true,
-	-- space_char_blankline = " ",
-	show_current_context = true,
-	-- show_current_context_start = true,
-	-- char_highlight_list = {
-	--   "IndentBlanklineIndent1",
-	--   "IndentBlanklineIndent2",
-	--   "IndentBlanklineIndent3",
-	-- },
+  buftype_exclude = {"terminal", "telescope", "nofile"},
+  filetype_exclude = {"help", "dashboard", "packer", "NvimTree", "Trouble", "TelescopePrompt", "Float"},
+  show_current_context = true,
+  show_current_context_start = false,
+  show_end_of_line = false,
+  show_trailing_blankline_indent = false,
+  space_char_blankline = " ",
+  use_treesitter = true,
 })
