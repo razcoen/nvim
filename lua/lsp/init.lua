@@ -3,5 +3,5 @@ if not status_ok then
   return
 end
 
-require "raz.lsp.lsp-installer"
-require("raz.lsp.handlers").setup()
+require "lsp.installer"
+require("lsp.handlers").setup()

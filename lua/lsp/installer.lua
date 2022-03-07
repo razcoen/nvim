@@ -7,32 +7,32 @@ end
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
 	local opts = {
-		on_attach = require("raz.lsp.handlers").on_attach,
-		capabilities = require("raz.lsp.handlers").capabilities,
+		on_attach = require("lsp.handlers").on_attach,
+		capabilities = require("lsp.handlers").capabilities,
 	}
 
 	 if server.name == "jsonls" then
-	 	local jsonls_opts = require("raz.lsp.settings.jsonls")
+	 	local jsonls_opts = require("lsp.settings.jsonls")
 	 	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	 end
 
 	 if server.name == "sumneko_lua" then
-	 	local sumneko_opts = require("raz.lsp.settings.sumneko_lua")
+	 	local sumneko_opts = require("lsp.settings.sumneko_lua")
 	  opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
 	 end
 
 	 if server.name == "gopls" then
-	 	local gopls_opts = require("raz.lsp.settings.gopls")
+	 	local gopls_opts = require("lsp.settings.gopls")
 	  opts = vim.tbl_deep_extend("force", gopls_opts, opts)
 	 end
 
 	 if server.name == "denols" then
-	 	local denols_opts = require("raz.lsp.settings.denols")
+	 	local denols_opts = require("lsp.settings.denols")
 	  opts = vim.tbl_deep_extend("force", denols_opts, opts)
 	 end
 
 	 if server.name == "tsserver" then
-	 	local tsserver_opts = require("raz.lsp.settings.tsserver")
+	 	local tsserver_opts = require("lsp.settings.tsserver")
 	  opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
 	 end
 

@@ -175,7 +175,11 @@ local function extend(tab1, tab2)
   return tab1
 end
 
-local extended_schemas = extend(schemas, default_schemas)
+local extended_schemas = default_schemas
+if extended_schemas ~= nil then
+  extended_schemas = extend(schemas, default_schemas)
+end
+
 
 local opts = {
   settings = {

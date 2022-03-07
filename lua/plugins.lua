@@ -44,18 +44,23 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
+
+  use {"windwp/nvim-autopairs", config = "require('plugins.autopairs')"}
+
+  use {"kyazdani42/nvim-tree.lua", config = "require('plugins.nvim-tree')"}
+
+  use {"akinsho/bufferline.nvim", config = "require('plugins.bufferline')"}
+  use {"nvim-lualine/lualine.nvim", config = "require('plugins.lualine')"}
+  use {"lukas-reineke/indent-blankline.nvim", config = "require('plugins.indentline')"}
+
+  use {"akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')"}
   use "voldikss/vim-floaterm"
+
+  use "moll/vim-bbye"
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
+  use {"lewis6991/impatient.nvim", config = "require('plugins.impatient')"}
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
@@ -94,20 +99,21 @@ return packer.startup(function(use)
   use "sbdchd/neoformat" -- autoformat
 
   -- Trouble
-  use "folke/trouble.nvim"
+  use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {"nvim-telescope/telescope.nvim", config = "require('plugins.telescope')"}
 
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
+    config = "require('plugins.treesitter')",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  use {"lewis6991/gitsigns.nvim", config = "require('plugins.gitsigns')"}
   use "tpope/vim-fugitive"
 
   -- Dashboard
