@@ -52,14 +52,19 @@ return packer.startup(function(use)
 
   use {"kyazdani42/nvim-tree.lua", config = "require('plugins.nvim-tree')"}
 
-  use {"akinsho/bufferline.nvim", config = "require('plugins.bufferline')"}
-  use {"nvim-lualine/lualine.nvim", config = "require('plugins.lualine')"}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('plugins.indentline')"}
 
   use {"akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')"}
   use "voldikss/vim-floaterm"
 
   use {'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')"}
+
+  -- status line
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = "require('plugins.lualine')"
+  }
 
   use {'romgrk/barbar.nvim', config = "require('plugins.barbar')"}
   use "moll/vim-bbye"
