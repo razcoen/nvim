@@ -16,4 +16,8 @@ vim.highlight.create('DiagnosticVirtualTextHint', { guifg = "White", ctermfg = "
 vim.highlight.create('Comment', { gui = "italic", cterm = "italic" }, false);
 
 -- Transparent background
-vim.cmd('hi Normal guibg=NONE')
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+vim.cmd('hi LineNr guibg=NONE ctermbg=NONE')
+vim.cmd('hi SignColumn guibg=NONE ctermbg=NONE')
+vim.cmd('hi VertSplit guibg=NONE ctermbg=NONE')
+vim.cmd('hi NonText guibg=NONE ctermbg=NONE')

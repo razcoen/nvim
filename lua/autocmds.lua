@@ -27,8 +27,8 @@ augroup _general_settings
   augroup end
   augroup _lsp
     autocmd!
-    autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
-    autocmd BufWritePre,TextChanged,InsertLeave *.ts Neoformat
+    " autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
+    " autocmd BufWritePre,TextChanged,InsertLeave *.ts Neoformat
     autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
   augroup end
   

@@ -132,6 +132,12 @@ _G.packer_plugins = {
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
   },
+  ["dressing.nvim"] = {
+    config = { "require('plugins.dressing')" },
+    loaded = true,
+    path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
+  },
   everforest = {
     loaded = true,
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/everforest",
@@ -178,20 +184,15 @@ _G.packer_plugins = {
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
-  neoformat = {
-    loaded = true,
-    path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
-  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
-  ["null-ls.nvim"] = {
+  ["nui.nvim"] = {
     loaded = true,
-    path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+    path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-autopairs"] = {
     config = { "require('plugins.autopairs')" },
@@ -200,6 +201,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
+    config = { "require('plugins.cmp')" },
     loaded = true,
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
@@ -327,58 +329,66 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require('plugins.bufferline')
-time([[Config for bufferline.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('plugins.telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('plugins.nvim-tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require('plugins.indentline')
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
 time([[Config for nvim-treesitter]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-require('plugins.toggleterm')
-time([[Config for toggleterm.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require('plugins.lualine')
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require('plugins.autopairs')
-time([[Config for nvim-autopairs]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require('plugins.impatient')
-time([[Config for impatient.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-require('plugins.trouble')
-time([[Config for trouble.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('plugins.gitsigns')
-time([[Config for gitsigns.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require('plugins.comment')
-time([[Config for Comment.nvim]], false)
 -- Config for: barbar.nvim
 time([[Config for barbar.nvim]], true)
 require('plugins.barbar')
 time([[Config for barbar.nvim]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require('plugins.impatient')
+time([[Config for impatient.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require('plugins.autopairs')
+time([[Config for nvim-autopairs]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require('plugins.bufferline')
+time([[Config for bufferline.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require('plugins.indentline')
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugins.cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require('plugins.lualine')
+time([[Config for lualine.nvim]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+require('plugins.trouble')
+time([[Config for trouble.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('plugins.telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: dressing.nvim
+time([[Config for dressing.nvim]], true)
+require('plugins.dressing')
+time([[Config for dressing.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('plugins.gitsigns')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('plugins.nvim-tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require('plugins.comment')
+time([[Config for Comment.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+require('plugins.toggleterm')
+time([[Config for toggleterm.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

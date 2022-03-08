@@ -59,6 +59,9 @@ return packer.startup(function(use)
   use {"akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')"}
   use "voldikss/vim-floaterm"
 
+  use {'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')"}
+
+
   use {'romgrk/barbar.nvim', config = "require('plugins.barbar')"}
   use "moll/vim-bbye"
   use "ahmedkhalf/project.nvim"
@@ -82,7 +85,7 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use {"hrsh7th/nvim-cmp", config = "require('plugins.cmp')"} -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -97,8 +100,8 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "sbdchd/neoformat" -- autoformat
+  -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  -- use "sbdchd/neoformat" -- autoformat
 
   -- Trouble
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
