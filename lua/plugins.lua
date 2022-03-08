@@ -61,7 +61,6 @@ return packer.startup(function(use)
 
   use {'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')"}
 
-
   use {'romgrk/barbar.nvim', config = "require('plugins.barbar')"}
   use "moll/vim-bbye"
   use "ahmedkhalf/project.nvim"
@@ -100,8 +99,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "sbdchd/neoformat" -- autoformat
+  use "lukas-reineke/lsp-format.nvim"
 
   -- Trouble
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
