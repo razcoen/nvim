@@ -25,11 +25,4 @@ augroup _general_settings
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
-  augroup _lsp
-    autocmd!
-    " autocmd BufWritePre,TextChanged,InsertLeave *.js Neoformat
-    " autocmd BufWritePre,TextChanged,InsertLeave *.ts Neoformat
-    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
-  augroup end
-  
 ]]

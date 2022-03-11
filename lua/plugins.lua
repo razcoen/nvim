@@ -105,6 +105,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
+  use { "jose-elias-alvarez/null-ls.nvim" }
 
   -- Trouble
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
