@@ -106,6 +106,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
   use { "jose-elias-alvarez/null-ls.nvim" }
+  use { "simrat39/rust-tools.nvim", config = "require('rust-tools').setup({})" }
 
   -- Trouble
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
