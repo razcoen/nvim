@@ -6,5 +6,3 @@ require "lsp"
 require "colorscheme"
 require "project"
 require "autocmds"
-
-

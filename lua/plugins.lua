@@ -81,24 +81,21 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate" -- highlight current word
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
   use "morhetz/gruvbox"
   use "ghifarit53/tokyonight-vim"
   use "joshdick/onedark.vim"
   use "sainnhe/everforest"
+  use "dracula/vim"
+  use "tomasiser/vim-code-dark"
 
   -- cmp plugins
   use {"hrsh7th/nvim-cmp", config = "require('plugins.cmp')"} -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "hrsh7th/cmp-vsnip"
+  use "hrsh7th/vim-vsnip"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -106,7 +103,8 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
   use { "jose-elias-alvarez/null-ls.nvim" }
-  use { "simrat39/rust-tools.nvim", config = "require('rust-tools').setup({})" }
+
+  use "ray-x/lsp_signature.nvim"
 
   -- Trouble
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
