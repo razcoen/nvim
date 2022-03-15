@@ -1,4 +1,4 @@
-local colorscheme = "dracula"
+local colorscheme = "codedark"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Errors

@@ -74,26 +74,47 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
-M.on_attach = function(client, bufnr)
-  -- using null-ls instead
+local function setup_format()
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.api.nvim_exec([[
+    augroup fmt
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> Format
+    augroup END
+  ]], false)
+end
+
+local function handle_js(client)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-  require("lsp_signature").on_attach()
+  vim.api.nvim_exec(
+    [[
+    augroup fmt_js
+      autocmd! * <buffer>
+      autocmd BufWritePre *.ts EslintFixAll
+      autocmd BufWritePre *.tsx EslintFixAll
+      autocmd BufWritePre *.js EslintFixAll
+      autocmd BufWritePre *.jsx EslintFixAll
+    augroup END
+  ]],
+    false
+  )
+end
+
+M.on_attach = function(client, bufnr)
+  require("lsp_signature").on_attach() -- signature help while writing
+
+  setup_format()
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+
+  handle_js(client)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
-end
-
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 return M

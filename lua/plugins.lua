@@ -87,6 +87,7 @@ return packer.startup(function(use)
   use "sainnhe/everforest"
   use "dracula/vim"
   use "tomasiser/vim-code-dark"
+  use "mvpopuk/inspired-github"
 
   -- cmp plugins
   use {"hrsh7th/nvim-cmp", config = "require('plugins.cmp')"} -- The completion plugin
@@ -102,8 +103,6 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
-  use { "jose-elias-alvarez/null-ls.nvim" }
-
   use "ray-x/lsp_signature.nvim"
 
   -- Trouble

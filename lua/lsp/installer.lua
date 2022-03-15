@@ -35,3 +35,26 @@ lsp_installer.on_server_ready(function(server)
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	server:setup(opts)
 end)
+
+
+-- auto install servers
+local servers = {
+  "bashls",
+  "jsonls",
+  "sumneko_lua",
+  "yamlls",
+  "gopls",
+  "tsserver",
+  "eslint",
+  "dockerls",
+  "rust_analyzer",
+  "html"
+}
+
+for _, name in pairs(servers) do
+  local server_is_found, server = lsp_installer.get_server(name)
+  if server_is_found and not server:is_installed() then
+    print("Installing " .. name)
+    server:install()
+  end
+end
