@@ -1,4 +1,15 @@
-local colorscheme = "codedark"
+local catppuccin = require('catppuccin')
+catppuccin.setup({
+  styles = {
+  	comments = "italic",
+  	functions = "NONE",
+  	keywords = "NONE",
+  	strings = "NONE",
+  	variables = "NONE",
+  },
+})
+
+local colorscheme = "kanagawa"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Errors
