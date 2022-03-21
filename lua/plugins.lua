@@ -90,6 +90,7 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
   use 'EdenEast/nightfox.nvim'
   use "catppuccin/nvim"
+  use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
   use {"hrsh7th/nvim-cmp", config = "require('plugins.cmp')"} -- The completion plugin
@@ -99,6 +100,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-vsnip"
   use "hrsh7th/vim-vsnip"
+  use {"heavenshell/vim-jsdoc", run =  "make install", ft = {'javascript', 'javascript.jsx','typescript'}}
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP

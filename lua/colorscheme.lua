@@ -1,7 +1,7 @@
 local catppuccin = require('catppuccin')
 catppuccin.setup({
   styles = {
-  	comments = "italic",
+  	comments = "NONE",
   	functions = "NONE",
   	keywords = "NONE",
   	strings = "NONE",
@@ -9,7 +9,13 @@ catppuccin.setup({
   },
 })
 
-local colorscheme = "kanagawa"
+require("github-theme").setup({
+  comment_style = "NONE",
+  keyword_style = "NONE",
+})
+
+
+local colorscheme = "github_dark"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Errors
@@ -23,9 +29,6 @@ vim.highlight.create('DiagnosticVirtualTextWarn', { guifg = "Yellow", ctermfg = 
 -- Info & Hints
 vim.highlight.create('DiagnosticVirtualTextInfo', { guifg = "White", ctermfg = "White" }, false);
 vim.highlight.create('DiagnosticVirtualTextHint', { guifg = "White", ctermfg = "White" }, false);
-
--- Comment in italics
-vim.highlight.create('Comment', { gui = "italic", cterm = "italic" }, false);
 
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-add-visual-studio-code-dark-theme-colors-to-the-menu
 -- completion colors

@@ -53,10 +53,10 @@ nvim_tree.setup {
   diagnostics = {
     enable = true,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = "H",
+      info = "I",
+      warning = "W",
+      error = "E",
     },
   },
   update_focused_file = {
