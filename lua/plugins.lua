@@ -108,6 +108,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
   use "ray-x/lsp_signature.nvim"
+  use "nvim-lua/lsp_extensions.nvim"
 
   -- Trouble
   use {"folke/trouble.nvim", config = "require('plugins.trouble')"}

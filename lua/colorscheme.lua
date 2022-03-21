@@ -19,16 +19,16 @@ local colorscheme = "github_dark"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Errors
-vim.highlight.create('LspDiagnosticsVirtualTextError', { guifg = "Red", ctermfg = "Red", gui = "bold" }, false);
-vim.highlight.create('DiagnosticVirtualTextError', { guifg = "Red", ctermfg = "Red", gui = "bold" }, false);
+vim.highlight.create('LspDiagnosticsVirtualTextError', { guifg = "Red", gui = "bold" }, false);
+vim.highlight.create('DiagnosticVirtualTextError', { guifg = "Red", gui = "bold" }, false);
 
 -- Warnings
-vim.highlight.create('LspDiagnosticsVirtualTextWarning', { guifg = "Yellow", ctermfg = "Yellow" }, false);
-vim.highlight.create('DiagnosticVirtualTextWarn', { guifg = "Yellow", ctermfg = "Yellow" }, false);
+vim.highlight.create('LspDiagnosticsVirtualTextWarning', { guifg = "Yellow" }, false);
+vim.highlight.create('DiagnosticVirtualTextWarn', { guifg = "Yellow" }, false);
 
 -- Info & Hints
-vim.highlight.create('DiagnosticVirtualTextInfo', { guifg = "White", ctermfg = "White" }, false);
-vim.highlight.create('DiagnosticVirtualTextHint', { guifg = "White", ctermfg = "White" }, false);
+vim.highlight.create('DiagnosticVirtualTextInfo', { guifg = "White" }, false);
+vim.highlight.create('DiagnosticVirtualTextHint', { guifg = "White" }, false);
 
 -- https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance#how-to-add-visual-studio-code-dark-theme-colors-to-the-menu
 -- completion colors
