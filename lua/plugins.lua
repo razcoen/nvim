@@ -46,18 +46,18 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons"
 
-  use {'numToStr/Comment.nvim', config = "require('plugins.comment')"}
+  use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
 
-  use {"windwp/nvim-autopairs", config = "require('plugins.autopairs')"}
+  use { "windwp/nvim-autopairs", config = "require('plugins.autopairs')" }
 
-  use {"kyazdani42/nvim-tree.lua", config = "require('plugins.nvim-tree')"}
+  use { "kyazdani42/nvim-tree.lua", config = "require('plugins.nvim-tree')" }
 
-  use {"lukas-reineke/indent-blankline.nvim", config = "require('plugins.indentline')"}
+  use { "lukas-reineke/indent-blankline.nvim", config = "require('plugins.indentline')" }
 
-  use {"akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')"}
-  use "voldikss/vim-floaterm"
+  use { "akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')" }
+  -- use "voldikss/vim-floaterm"
 
-  use {'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')"}
+  use { 'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')" }
 
   -- status line
   use {
@@ -66,17 +66,17 @@ return packer.startup(function(use)
     config = "require('plugins.lualine')"
   }
 
-  use {'romgrk/barbar.nvim', config = "require('plugins.barbar')"}
+  use { 'romgrk/barbar.nvim', config = "require('plugins.barbar')" }
   use "moll/vim-bbye"
   use "ahmedkhalf/project.nvim"
-  use {"lewis6991/impatient.nvim", config = "require('plugins.impatient')"}
+  use { "lewis6991/impatient.nvim", config = "require('plugins.impatient')" }
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use {
     'iamcco/markdown-preview.nvim',
-    run = function() vim.fn['mkdp#util#install']() end,
-    ft = {'markdown'}
+    run = 'cd app && yarn install',
+    ft = { 'markdown' }
   }
   use "RRethy/vim-illuminate" -- highlight current word
 
@@ -93,14 +93,14 @@ return packer.startup(function(use)
   use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
-  use {"hrsh7th/nvim-cmp", config = "require('plugins.cmp')"} -- The completion plugin
+  use { "hrsh7th/nvim-cmp", config = "require('plugins.cmp')" } -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-vsnip"
   use "hrsh7th/vim-vsnip"
-  use {"heavenshell/vim-jsdoc", run =  "make install", ft = {'javascript', 'javascript.jsx','typescript'}}
+  use { "heavenshell/vim-jsdoc", run = "make install", ft = { 'javascript', 'javascript.jsx', 'typescript' } }
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -111,19 +111,19 @@ return packer.startup(function(use)
   use "nvim-lua/lsp_extensions.nvim"
 
   -- Trouble
-  use {"folke/trouble.nvim", config = "require('plugins.trouble')"}
+  use { "folke/trouble.nvim", config = "require('plugins.trouble')" }
 
   -- Telescope
-  use {'nvim-telescope/telescope.nvim',
-      config = "require('plugins.telescope')",
-      requires = {
-        {'nvim-lua/popup.nvim'},
-        {'nvim-lua/plenary.nvim'},
-        {'nvim-telescope/telescope-fzf-native.nvim'}
-      }
+  use { 'nvim-telescope/telescope.nvim',
+    config = "require('plugins.telescope')",
+    requires = {
+      { 'nvim-lua/popup.nvim' },
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim' }
     }
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'cljoly/telescope-repo.nvim'}
+  }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'cljoly/telescope-repo.nvim' }
 
   -- Treesitter
   use {
@@ -134,7 +134,7 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
-  use {"lewis6991/gitsigns.nvim", config = "require('plugins.gitsigns')"}
+  use { "lewis6991/gitsigns.nvim", config = "require('plugins.gitsigns')" }
   use "tpope/vim-fugitive"
 
   -- Dashboard

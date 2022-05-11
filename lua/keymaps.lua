@@ -22,19 +22,19 @@ keymap("n", "<C-f>", ":NvimTreeToggle<cr>", opts)
 -- Trouble
 keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
 
--- Floaterm
-keymap("n", "<C-\\>", ":FloatermToggle<cr>", opts)
-keymap("t", "<Esc>", "<C-\\><C-n>", opts)
-keymap("t","<C-\\>","<C-\\><C-n>:FloatermToggle<CR>", opts)
-keymap("t","<C-n>","<C-\\><C-n>:FloatermNew<CR>", opts)
-keymap("t","<C-q>","<C-\\><C-n>:FloatermKill<CR>", opts)
-keymap("t","<C-k>","<C-\\><C-n>:FloatermNext<CR>", opts)
-keymap("t","<C-j>","<C-\\><C-n>:FloatermPrev<CR>", opts)
-vim.api.nvim_exec(
-[[
-let g:floaterm_width = 0.9
-let g:floaterm_height = 0.7
-]], true)
+-- -- Floaterm
+-- keymap("n", "<C-\\>", ":FloatermToggle<cr>", opts)
+-- keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+-- keymap("t","<C-\\>","<C-\\><C-n>:FloatermToggle<CR>", opts)
+-- keymap("t","<C-n>","<C-\\><C-n>:FloatermNew<CR>", opts)
+-- keymap("t","<C-q>","<C-\\><C-n>:FloatermKill<CR>", opts)
+-- keymap("t","<C-k>","<C-\\><C-n>:FloatermNext<CR>", opts)
+-- keymap("t","<C-j>","<C-\\><C-n>:FloatermPrev<CR>", opts)
+-- vim.api.nvim_exec(
+-- [[
+-- let g:floaterm_width = 0.9
+-- let g:floaterm_height = 0.7
+-- ]], true)
 
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize -2<CR>", opts)
@@ -92,4 +92,3 @@ keymap("i", "<C-u>", "<ESC>viwUi", { noremap = true })
 
 -- Remove highlights
 keymap("n", "<CR>", ":noh<CR><CR>", { noremap = true, silent = true })
-

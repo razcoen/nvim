@@ -1,11 +1,11 @@
 local catppuccin = require('catppuccin')
 catppuccin.setup({
   styles = {
-  	comments = "NONE",
-  	functions = "NONE",
-  	keywords = "NONE",
-  	strings = "NONE",
-  	variables = "NONE",
+    comments = "NONE",
+    functions = "NONE",
+    keywords = "NONE",
+    strings = "NONE",
+    variables = "NONE",
   },
 })
 
@@ -15,7 +15,7 @@ require("github-theme").setup({
 })
 
 
-local colorscheme = "github_dark"
+local colorscheme = "nightfox"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Errors
@@ -57,4 +57,3 @@ if colorscheme == "dracula" then
   -- vim.api.nvim_exec("highlight! BufferInactiveMod guifg=#89b8c3", true) -- light blue
   vim.api.nvim_exec("highlight! BufferInactiveMod guifg=#d070a0", true) -- light pink
 end
-
