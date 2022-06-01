@@ -57,7 +57,7 @@ local function lsp_highlight_document(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]],
+    ]] ,
       false
     )
   end
@@ -94,18 +94,18 @@ local function handle_js(client)
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-  vim.api.nvim_exec(
-    [[
-    augroup fmt_js
-      autocmd! * <buffer>
-      autocmd BufWritePre *.ts EslintFixAll
-      autocmd BufWritePre *.tsx EslintFixAll
-      autocmd BufWritePre *.js EslintFixAll
-      autocmd BufWritePre *.jsx EslintFixAll
-    augroup END
-  ]],
-    false
-  )
+  -- vim.api.nvim_exec(
+  --   [[
+  --   augroup fmt_js
+  --     autocmd! * <buffer>
+  --     autocmd BufWritePre *.ts EslintFixAll
+  --     autocmd BufWritePre *.tsx EslintFixAll
+  --     autocmd BufWritePre *.js EslintFixAll
+  --     autocmd BufWritePre *.jsx EslintFixAll
+  --   augroup END
+  -- ]] ,
+  --   false
+  -- )
 end
 
 M.on_attach = function(client, bufnr)

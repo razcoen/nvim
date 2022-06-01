@@ -89,8 +89,9 @@ return packer.startup(function(use)
   use "tomasiser/vim-code-dark"
   use "rebelot/kanagawa.nvim"
   use 'EdenEast/nightfox.nvim'
-  use "catppuccin/nvim"
+  use { "catppuccin/nvim", as = "catppuccin" }
   use "projekt0n/github-nvim-theme"
+  use "sainnhe/everforest"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", config = "require('plugins.cmp')" } -- The completion plugin

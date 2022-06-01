@@ -15,7 +15,8 @@ require("github-theme").setup({
 })
 
 
-local colorscheme = "nightfox"
+vim.g.catppuccin_flavour = "frappe"
+local colorscheme = "catppuccin"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
 -- Errors
