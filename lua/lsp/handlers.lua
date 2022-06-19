@@ -72,7 +72,7 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>ca", "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", "<cmd>Format<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
   vim.api.nvim_buf_set_keymap(bufnr, "n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
@@ -81,7 +81,7 @@ local function lsp_keymaps(bufnr)
 end
 
 local function setup_format()
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_seq_sync()' ]]
   vim.api.nvim_exec([[
     augroup fmt
       autocmd! * <buffer>

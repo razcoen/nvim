@@ -12,7 +12,8 @@ toggleterm.setup({
   start_in_insert = true,
   insert_mappings = true,
   persist_size = true,
-  direction = "horizontal", -- float/horizontal/vertical
+  size = 0.4 * vim.o.columns,
+  direction = "vertical", -- float/horizontal/vertical
   close_on_exit = true,
   shell = vim.o.shell,
   -- float_opts = {
