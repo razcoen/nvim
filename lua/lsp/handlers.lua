@@ -91,12 +91,12 @@ end
 
 local function setup_format()
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting_seq_sync()' ]]
-  vim.api.nvim_exec([[
-    augroup fmt
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> Format
-    augroup END
-  ]], false)
+  -- vim.api.nvim_exec([[
+  --   augroup fmt
+  --     autocmd! * <buffer>
+  --     autocmd BufWritePre <buffer> Format
+  --   augroup END
+  -- ]], false)
 end
 
 local function handle_js(client)
@@ -118,7 +118,7 @@ local function handle_js(client)
 end
 
 M.on_attach = function(client, bufnr)
-  -- setup_format()
+  setup_format()
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
   handle_js(client)
