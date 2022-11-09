@@ -117,10 +117,20 @@ local function handle_js(client)
   -- )
 end
 
+local function fix_helm(bufnr)
+  if vim.bo[bufnr].buftype ~= "" or vim.bo[bufnr].filetype == "helm" then
+      vim.diagnostic.disable(bufnr)
+      vim.defer_fn(function()
+        vim.diagnostic.reset(nil, bufnr)
+      end, 1000)
+    end
+end
+
 M.on_attach = function(client, bufnr)
+  fix_helm(bufnr)
   setup_format()
   lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
+  -- lsp_highlight_document(client)
   handle_js(client)
 end
 

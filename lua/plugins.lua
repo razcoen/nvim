@@ -77,13 +77,13 @@ return packer.startup(function(use)
   -- use "tomasiser/vim-code-dark"
   -- use "rebelot/kanagawa.nvim"
   -- use 'EdenEast/nightfox.nvim'
-  -- use { "catppuccin/nvim", as = "catppuccin" }
+  use { "catppuccin/nvim", as = "catppuccin" }
   use "projekt0n/github-nvim-theme"
   use "ayu-theme/ayu-vim"
   use "Shatur/neovim-ayu"
-  -- use "shaunsingh/nord.nvim"
+  use "shaunsingh/nord.nvim"
   -- use "lourenci/github-colors"
-  -- use "krfl/fleetish-vim"
+  use "krfl/fleetish-vim"
   -- use "bluz71/vim-moonfly-colors"
 
   -- cmp plugins
@@ -106,6 +106,7 @@ return packer.startup(function(use)
     config = "require('lsp_signature').setup({})"
   }
   use "nvim-lua/lsp_extensions.nvim"
+  use 'towolf/vim-helm' -- sets the filetype to be helm
   -- use { -- lightbulb
   --   'kosayoda/nvim-lightbulb',
   --   config = "require('nvim-lightbulb').setup({autocmd = {enabled = true}})",
