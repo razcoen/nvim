@@ -69,7 +69,8 @@ return packer.startup(function(use)
   use "RRethy/vim-illuminate" -- highlight current word
 
   -- Colorschemes
-  use "morhetz/gruvbox"
+  -- use "morhetz/gruvbox"
+  use { "ellisonleao/gruvbox.nvim" }
   -- use "ghifarit53/tokyonight-vim"
   -- use "joshdick/onedark.vim"
   -- use "sainnhe/everforest"
