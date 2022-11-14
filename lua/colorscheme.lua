@@ -7,11 +7,10 @@
 -- })
 --
 
-vim.g.catppuccin_flavour = "frappe"
-local colorscheme = "ayu"
+local colorscheme = "iceberg"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 
-require("transparent")
+-- require("transparent")
 
 vim.api.nvim_exec("highlight! Search guifg=Yellow gui=bold", false)
 -- vim.api.nvim_set_hl('TelescopeSelection', { guibg = "#374247", gui = "bold" }, false);

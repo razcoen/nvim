@@ -85,6 +85,7 @@ return packer.startup(function(use)
   -- use "lourenci/github-colors"
   use "krfl/fleetish-vim"
   -- use "bluz71/vim-moonfly-colors"
+  use "cocopon/iceberg.vim"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", config = "require('plugins.cmp')" } -- The completion plugin
