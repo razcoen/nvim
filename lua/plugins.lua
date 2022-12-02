@@ -122,6 +122,7 @@ return packer.startup(function(use)
   --   requires = 'antoinemadec/FixCursorHold.nvim',
   -- }
   use "simrat39/symbols-outline.nvim" -- symbols panel
+  use "razcoen/fleet.nvim"
 
   -- BUG: fidget has some issues with transparency
   use {

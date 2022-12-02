@@ -7,7 +7,7 @@
 -- })
 --
 
-local colorscheme = "gruvbox"
+local colorscheme = "fleet"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 vim.api.nvim_exec([[
   let g:gruvbox_contrast_dark = 'hard'
