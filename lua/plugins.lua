@@ -87,6 +87,7 @@ return packer.startup(function(use)
   use "krfl/fleetish-vim"
   -- use "bluz71/vim-moonfly-colors"
   use "cocopon/iceberg.vim"
+  use "razcoen/fleet.nvim"
   use {
     "mcchrish/zenbones.nvim",
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
@@ -122,7 +123,6 @@ return packer.startup(function(use)
   --   requires = 'antoinemadec/FixCursorHold.nvim',
   -- }
   use "simrat39/symbols-outline.nvim" -- symbols panel
-  use "razcoen/fleet.nvim"
 
   -- BUG: fidget has some issues with transparency
   use {
