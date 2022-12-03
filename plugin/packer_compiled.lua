@@ -138,6 +138,11 @@ _G.packer_plugins = {
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
   },
+  ["fleet.nvim"] = {
+    loaded = true,
+    path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/fleet.nvim",
+    url = "https://github.com/razcoen/fleet.nvim"
+  },
   ["fleetish-vim"] = {
     loaded = true,
     path = "/Users/razcohen/.local/share/nvim/site/pack/packer/start/fleetish-vim",
@@ -354,10 +359,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: rust-tools.nvim
+time([[Config for rust-tools.nvim]], true)
+require('rust-tools').setup({})
+time([[Config for rust-tools.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require('plugins.comment')
+time([[Config for Comment.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('plugins.nvim-tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('plugins.gitsigns')
+time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require('plugins.treesitter')
 time([[Config for nvim-treesitter]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+require('fidget').setup({})
+time([[Config for fidget.nvim]], false)
 -- Config for: lsp_signature.nvim
 time([[Config for lsp_signature.nvim]], true)
 require('lsp_signature').setup({})
@@ -370,50 +395,30 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for trouble.nvim]], true)
 require('plugins.trouble')
 time([[Config for trouble.nvim]], false)
--- Config for: impatient.nvim
-time([[Config for impatient.nvim]], true)
-require('plugins.impatient')
-time([[Config for impatient.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('plugins.cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-require('plugins.gitsigns')
-time([[Config for gitsigns.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require('plugins.indentline')
-time([[Config for indent-blankline.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('plugins.telescope')
 time([[Config for telescope.nvim]], false)
--- Config for: dressing.nvim
-time([[Config for dressing.nvim]], true)
-require('plugins.dressing')
-time([[Config for dressing.nvim]], false)
--- Config for: fidget.nvim
-time([[Config for fidget.nvim]], true)
-require('fidget').setup({})
-time([[Config for fidget.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require('plugins.comment')
-time([[Config for Comment.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('plugins.nvim-tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: rust-tools.nvim
-time([[Config for rust-tools.nvim]], true)
-require('rust-tools').setup({})
-time([[Config for rust-tools.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('plugins.cmp')
+time([[Config for nvim-cmp]], false)
 -- Config for: barbar.nvim
 time([[Config for barbar.nvim]], true)
 require('plugins.barbar')
 time([[Config for barbar.nvim]], false)
+-- Config for: dressing.nvim
+time([[Config for dressing.nvim]], true)
+require('plugins.dressing')
+time([[Config for dressing.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require('plugins.indentline')
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require('plugins.impatient')
+time([[Config for impatient.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
