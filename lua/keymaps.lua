@@ -31,7 +31,7 @@ keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
 
 -- -- Floaterm
 -- keymap("n", "<C-\\>", ":FloatermToggle<cr>", opts)
-keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)
 keymap("i", "<Esc>", "<C-\\><C-n>", opts)
 keymap("n", "<Esc>", "<C-\\><C-n>", opts)
 -- keymap("t","<C-\\>","<C-\\><C-n>:FloatermToggle<CR>", opts)

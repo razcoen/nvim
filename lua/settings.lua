@@ -45,3 +45,4 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[silent! set iskeyword+=-]]
 vim.cmd [[silent! set spellsuggest]]
+vim.cmd [[silent! set spell]]
