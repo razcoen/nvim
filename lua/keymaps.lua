@@ -16,11 +16,11 @@ keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
 keymap("t", "<C-d>", ":bp|bd #<CR>", opts)
 
 -- Telescope
-keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", { noremap = true })
-keymap("n", "<S-p>", "<CMD>Telescope live_grep hidden=true<CR>", { noremap = true })
-keymap("n", "<leader>ff", "<CMD>lua require('plugins.telescope').all_files()<CR>", { noremap = true })
+keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", opts)
+keymap("n", "<S-p>", "<CMD>Telescope live_grep hidden=true<CR>", opts)
+keymap("n", "<leader>ff", "<CMD>lua require('plugins.telescope').all_files()<CR>", opts)
 keymap("n", "<leader>fb",
-  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>",
+  "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown(opts))<cr>",
   opts)
 
 -- Tree
@@ -29,22 +29,6 @@ keymap("n", "<C-f>", ":NvimTreeToggle<CR>", opts)
 -- Trouble
 keymap("n", "<C-t>", ":TroubleToggle<cr>", opts)
 
--- -- Floaterm
--- keymap("n", "<C-\\>", ":FloatermToggle<cr>", opts)
-keymap("t", "<Esc><Esc>", "<C-\\><C-n>", opts)
-keymap("i", "<Esc>", "<C-\\><C-n>", opts)
-keymap("n", "<Esc>", "<C-\\><C-n>", opts)
--- keymap("t","<C-\\>","<C-\\><C-n>:FloatermToggle<CR>", opts)
--- keymap("t","<C-n>","<C-\\><C-n>:FloatermNew<CR>", opts)
--- keymap("t","<C-q>","<C-\\><C-n>:FloatermKill<CR>", opts)
--- keymap("t","<C-k>","<C-\\><C-n>:FloatermNext<CR>", opts)
--- keymap("t","<C-j>","<C-\\><C-n>:FloatermPrev<CR>", opts)
--- vim.api.nvim_exec(
--- [[
--- let g:floaterm_width = 0.9
--- let g:floaterm_height = 0.7
--- ]], true)
-
 -- Resize with arrows
 keymap("n", "<S-Up>", ":resize -2<CR>", opts)
 keymap("n", "<S-Down>", ":resize +2<CR>", opts)
@@ -52,58 +36,77 @@ keymap("n", "<S-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<CR>", opts)
 
 -- Buffers
-keymap("n", "<Tab>", ":BufferNext<CR>", { noremap = true, silent = true })
-keymap("n", "gn", ":bn<CR>", { noremap = true, silent = true })
-keymap("n", "<S-Tab>", ":BufferPrevious<CR>", { noremap = true, silent = true })
-keymap("n", "gp", ":bp<CR>", { noremap = true, silent = true })
-keymap("n", "<S-q>", ":BufferClose!<CR>", { noremap = true, silent = true })
-keymap("n", "<C-q>", ":q<CR>", { noremap = true, silent = true })
+keymap("n", "<Tab>", ":BufferNext<CR>", opts)
+keymap("n", "gn", ":bn<CR>", opts)
+keymap("n", "<S-Tab>", ":BufferPrevious<CR>", opts)
+keymap("n", "gp", ":bp<CR>", opts)
+keymap("n", "<S-q>", ":BufferClose!<CR>", opts)
+keymap("n", "<C-q>", ":q<CR>", opts)
 
 -- Move between barbar buffers
-keymap("n", "<Space>1", ":BufferGoto 1<CR>", { silent = true })
-keymap("n", "<Space>2", ":BufferGoto 2<CR>", { silent = true })
-keymap("n", "<Space>3", ":BufferGoto 3<CR>", { silent = true })
-keymap("n", "<Space>4", ":BufferGoto 4<CR>", { silent = true })
-keymap("n", "<Space>5", ":BufferGoto 5<CR>", { silent = true })
-keymap("n", "<Space>6", ":BufferGoto 6<CR>", { silent = true })
-keymap("n", "<Space>7", ":BufferGoto 7<CR>", { silent = true })
-keymap("n", "<Space>8", ":BufferGoto 8<CR>", { silent = true })
-keymap("n", "<Space>9", ":BufferGoto 9<CR>", { silent = true })
-keymap("n", "<A-1>", ":BufferGoto 1<CR>", { silent = true })
-keymap("n", "<A-2>", ":BufferGoto 2<CR>", { silent = true })
-keymap("n", "<A-3>", ":BufferGoto 3<CR>", { silent = true })
-keymap("n", "<A-4>", ":BufferGoto 4<CR>", { silent = true })
-keymap("n", "<A-5>", ":BufferGoto 5<CR>", { silent = true })
-keymap("n", "<A-6>", ":BufferGoto 6<CR>", { silent = true })
-keymap("n", "<A-7>", ":BufferGoto 7<CR>", { silent = true })
-keymap("n", "<A-8>", ":BufferGoto 8<CR>", { silent = true })
-keymap("n", "<A-9>", ":BufferGoto 9<CR>", { silent = true })
+keymap("n", "<Space>1", ":BufferGoto 1<CR>", opts)
+keymap("n", "<Space>2", ":BufferGoto 2<CR>", opts)
+keymap("n", "<Space>3", ":BufferGoto 3<CR>", opts)
+keymap("n", "<Space>4", ":BufferGoto 4<CR>", opts)
+keymap("n", "<Space>5", ":BufferGoto 5<CR>", opts)
+keymap("n", "<Space>6", ":BufferGoto 6<CR>", opts)
+keymap("n", "<Space>7", ":BufferGoto 7<CR>", opts)
+keymap("n", "<Space>8", ":BufferGoto 8<CR>", opts)
+keymap("n", "<Space>9", ":BufferGoto 9<CR>", opts)
+keymap("n", "<A-1>", ":BufferGoto 1<CR>", opts)
+keymap("n", "<A-2>", ":BufferGoto 2<CR>", opts)
+keymap("n", "<A-3>", ":BufferGoto 3<CR>", opts)
+keymap("n", "<A-4>", ":BufferGoto 4<CR>", opts)
+keymap("n", "<A-5>", ":BufferGoto 5<CR>", opts)
+keymap("n", "<A-6>", ":BufferGoto 6<CR>", opts)
+keymap("n", "<A-7>", ":BufferGoto 7<CR>", opts)
+keymap("n", "<A-8>", ":BufferGoto 8<CR>", opts)
+keymap("n", "<A-9>", ":BufferGoto 9<CR>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 -- Don't yank on delete char
-keymap("n", "x", '"_x', { noremap = true, silent = true })
-keymap("n", "X", '"_X', { noremap = true, silent = true })
-keymap("v", "x", '"_x', { noremap = true, silent = true })
-keymap("v", "X", '"_X', { noremap = true, silent = true })
+keymap("n", "x", '"_x', opts)
+keymap("n", "X", '"_X', opts)
+keymap("v", "x", '"_x', opts)
+keymap("v", "X", '"_X', opts)
 
 -- Don't yank on visual paste
-keymap("v", "p", '"_dP', { noremap = true, silent = true })
+keymap("v", "p", '"_dP', opts)
 
 -- Save file by CTRL-S
-keymap("n", "<C-s>", ":w!<CR>", { noremap = true, silent = true })
-keymap("i", "<C-s>", "<ESC> :w!<CR>", { noremap = true, silent = true })
+keymap("n", "<C-s>", ":w!<CR>", opts)
+keymap("i", "<C-s>", "<ESC> :w!<CR>", opts)
 
 -- Make word uppercase
-keymap("n", "<C-u>", "viwU<ESC>", { noremap = true })
-keymap("i", "<C-u>", "<ESC>viwUi", { noremap = true })
+keymap("n", "<C-u>", "viwU<ESC>", opts)
+keymap("i", "<C-u>", "<ESC>viwUi", opts)
 
 -- Remove highlights
-keymap("n", "<CR>", ":noh<CR><CR>", { noremap = true, silent = true })
+keymap("n", "<CR>", ":noh<CR><CR>", opts)
 
 
 -- Terminal
-keymap("n", [[<c-\>]], ":term<CR>", { silent = true })
-keymap("i", [[<c-\>]], ":term<CR>", { silent = true })
-keymap("v", [[<c-\>]], ":term<CR>", { silent = true })
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
+keymap("i", "<Esc>", "<C-\\><C-n>", opts)
+
+keymap("n", [[<c-\>]], ":term<CR>", opts)
+keymap("i", [[<c-\>]], ":term<CR>", opts)
+keymap("v", [[<c-\>]], ":term<CR>", opts)
+
+-- LSP
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "gr", "<cmd>lua require'telescope.builtin'.lsp_references()<CR>", opts)
+keymap("n", "gl", '<cmd>lua vim.diagnostic.open_float(opts)<CR>', opts)
+keymap("n", "gi", "<cmd>lua require'telescope.builtin'.lsp_implementations()<CR>", opts)
+keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+keymap("v", "<leader>ca", "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
+keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
+keymap("v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", opts)
+keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>", opts)
+

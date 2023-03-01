@@ -55,11 +55,11 @@ nvim_tree.setup {
   --     error = "E",
   --   },
   -- },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-    ignore_list = {},
-  },
+  -- update_focused_file = {
+  --   enable = true,
+  --   update_cwd = true,
+  --   ignore_list = {},
+  -- },
   -- system_open = {
   --   cmd = nil,
   --   args = {},

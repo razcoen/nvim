@@ -54,19 +54,11 @@ return packer.startup(function(use)
 
   use { "lukas-reineke/indent-blankline.nvim", config = "require('plugins.indentline')" }
 
-  -- use { "akinsho/toggleterm.nvim", config = "require('plugins.toggleterm')" }
-
   use { 'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')" }
   use { 'romgrk/barbar.nvim', config = "require('plugins.barbar')" }
   use "ahmedkhalf/project.nvim"
   use { "lewis6991/impatient.nvim", config = "require('plugins.impatient')" }
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  -- use {
-  --   'iamcco/markdown-preview.nvim',
-  --   run = 'cd app && yarn install',
-  --   ft = { 'markdown' }
-  -- }
-  use "RRethy/vim-illuminate" -- highlight current word
+  -- use "RRethy/vim-illuminate" -- highlight current word
 
   -- Colorschemes
   -- use "morhetz/gruvbox"
@@ -107,8 +99,9 @@ return packer.startup(function(use)
   use { "heavenshell/vim-jsdoc", run = "make install", ft = { 'javascript', 'javascript.jsx', 'typescript' } }
 
   -- LSP
+  use {"williamboman/mason.nvim", config = 'require("mason").setup()'}
+  use {"williamboman/mason-lspconfig.nvim"}
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
   use {
@@ -117,21 +110,6 @@ return packer.startup(function(use)
   }
   use "nvim-lua/lsp_extensions.nvim"
   use 'towolf/vim-helm' -- sets the filetype to be helm
-  -- use { -- lightbulb
-  --   'kosayoda/nvim-lightbulb',
-  --   config = "require('nvim-lightbulb').setup({autocmd = {enabled = true}})",
-  --   requires = 'antoinemadec/FixCursorHold.nvim',
-  -- }
-  use "simrat39/symbols-outline.nvim" -- symbols panel
-
-  -- BUG: fidget has some issues with transparency
-  use {
-    "j-hui/fidget.nvim",
-    config = "require('fidget').setup({})"
-  }
-
-  -- Trouble
-  use { "folke/trouble.nvim", config = "require('plugins.trouble')" }
 
   -- Telescope
   use { 'nvim-telescope/telescope.nvim',

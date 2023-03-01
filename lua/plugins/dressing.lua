@@ -17,7 +17,9 @@ require('dressing').setup({
     min_width = 20,
 
     -- Window transparency (0-100)
-    winblend = 10,
+    win_options = {
+      winblend = 10,
+    },
 
     -- see :help dressing_get_config
     get_config = nil,
@@ -63,10 +65,12 @@ require('dressing').setup({
       -- 'editor' and 'win' will default to being centered
       relative = "editor",
 
-      -- Window transparency (0-100)
-      winblend = 10,
-      -- Change default highlight groups (see :help winhl)
-      winhighlight = "",
+      win_options = {
+        -- Window transparency (0-100)
+        winblend = 10,
+        -- Change default highlight groups (see :help winhl)
+        winhighlight = "",
+      },
 
       -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
       -- the min_ and max_ options can be a list of mixed types.
