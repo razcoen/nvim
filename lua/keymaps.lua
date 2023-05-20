@@ -103,10 +103,9 @@ keymap("n", "gi", "<cmd>lua require'telescope.builtin'.lsp_implementations()<CR>
 keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("v", "<leader>ca", "<cmd>'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
 keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>", opts)
+keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 keymap("v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", opts)
 keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>", opts)
-

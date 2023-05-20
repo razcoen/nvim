@@ -50,26 +50,3 @@ end
 for _, group in ipairs(config.groups) do
   clear_group_bg(group)
 end
-
--- if type(config.extra_groups) == "string" then
---   if config.extra_groups == "all" then
---     local hls = vim.split(vim.api.nvim_exec("highlight", true), "\n")
---     for _, hl in ipairs(hls) do
---       if not string.find(string.lower(hl), 'select') and
---           not string.find(string.lower(hl), 'visual') and
---           not string.find(string.lower(hl), 'cursorline') and
---           not string.find(string.lower(hl), 'nc') and
---           not string.find(string.lower(hl), 'shadow') and
---           true
---       then
---         clear_group_bg(nil, hl)
---       end
---     end
---   else
---     clear_group_bg(config.extra_groups)
---   end
--- else
---   for _, group in ipairs(config.extra_groups) do
---     clear_group_bg(group)
---   end
--- end

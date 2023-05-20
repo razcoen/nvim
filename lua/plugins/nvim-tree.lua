@@ -55,11 +55,11 @@ nvim_tree.setup {
   --     error = "E",
   --   },
   -- },
-  -- update_focused_file = {
-  --   enable = true,
-  --   update_cwd = true,
-  --   ignore_list = {},
-  -- },
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+    ignore_list = {},
+  },
   -- system_open = {
   --   cmd = nil,
   --   args = {},
@@ -68,11 +68,11 @@ nvim_tree.setup {
   --   dotfiles = false,
   --   custom = {},
   -- },
-  -- git = {
-  --   enable = false,
-  --   ignore = false,
-  --   timeout = 500,
-  -- },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 500,
+  },
   -- view = {
   --   width = 30,
   --   hide_root_folder = false,

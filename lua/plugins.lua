@@ -42,8 +42,8 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons"
 
   use { 'numToStr/Comment.nvim', config = "require('plugins.comment')" }
@@ -86,22 +86,25 @@ return packer.startup(function(use)
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
     -- In Vim, compat mode is turned on as Lush only works in Neovim.
     requires = "rktjmp/lush.nvim"
-}
+  }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", config = "require('plugins.cmp')" } -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/cmp-buffer"                                      -- buffer completions
+  use "hrsh7th/cmp-path"                                        -- path completions
+  use "hrsh7th/cmp-cmdline"                                     -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-vsnip"
   use "hrsh7th/vim-vsnip"
   use { "heavenshell/vim-jsdoc", run = "make install", ft = { 'javascript', 'javascript.jsx', 'typescript' } }
 
   -- LSP
-  use {"williamboman/mason.nvim", config = 'require("mason").setup()'}
-  use {"williamboman/mason-lspconfig.nvim"}
-  use "neovim/nvim-lspconfig" -- enable LSP
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    run = ":MasonUpdate"             -- :MasonUpdate updates registry contents
+  }
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "lukas-reineke/lsp-format.nvim"
   use {
