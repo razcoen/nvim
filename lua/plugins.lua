@@ -58,35 +58,11 @@ return packer.startup(function(use)
   use { 'romgrk/barbar.nvim', config = "require('plugins.barbar')" }
   use "ahmedkhalf/project.nvim"
   use { "lewis6991/impatient.nvim", config = "require('plugins.impatient')" }
-  -- use "RRethy/vim-illuminate" -- highlight current word
+  use {"RRethy/vim-illuminate"} -- highlight current word
 
   -- Colorschemes
-  -- use "morhetz/gruvbox"
-  use { "ellisonleao/gruvbox.nvim" }
-  -- use "ghifarit53/tokyonight-vim"
-  -- use "joshdick/onedark.vim"
-  -- use "sainnhe/everforest"
-  -- use "dracula/vim"
-  -- use "tomasiser/vim-code-dark"
-  -- use "rebelot/kanagawa.nvim"
-  -- use 'EdenEast/nightfox.nvim'
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use "projekt0n/github-nvim-theme"
-  use "ayu-theme/ayu-vim"
-  use "Shatur/neovim-ayu"
-  use "shaunsingh/nord.nvim"
-  -- use "lourenci/github-colors"
-  use "krfl/fleetish-vim"
-  -- use "bluz71/vim-moonfly-colors"
-  use "cocopon/iceberg.vim"
-  use "razcoen/fleet.nvim"
-  use {
-    "mcchrish/zenbones.nvim",
-    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    requires = "rktjmp/lush.nvim"
-  }
+  use { "morhetz/gruvbox" }
+  use {"razcoen/fleet.nvim"}
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", config = "require('plugins.cmp')" } -- The completion plugin
@@ -113,6 +89,10 @@ return packer.startup(function(use)
   }
   use "nvim-lua/lsp_extensions.nvim"
   use 'towolf/vim-helm' -- sets the filetype to be helm
+
+  -- Better go support
+  use {'ray-x/go.nvim', config = "require('plugins.go')"}
+  use 'ray-x/guihua.lua'
 
   -- Telescope
   use { 'nvim-telescope/telescope.nvim',

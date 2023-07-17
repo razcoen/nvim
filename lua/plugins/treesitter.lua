@@ -1,9 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-  return
-end
-
-configs.setup {
+require("nvim-treesitter.configs").setup {
   ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
@@ -34,6 +29,7 @@ configs.setup {
         ["ac"] = "@class.outer",
         ["ic"] = "@class.inner",
       },
+
       -- You can choose the select mode (default is charwise 'v')
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
