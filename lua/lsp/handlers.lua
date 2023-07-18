@@ -9,6 +9,8 @@ return {
     end
   end,
 
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
     gopls = {

@@ -1,4 +1,7 @@
-require('go').setup()
+require('go').setup({
+  luasnip = true,
+  textobjects = false,
+})
 
 local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -8,4 +11,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
   group = format_sync_grp,
 })
-
