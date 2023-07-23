@@ -1,4 +1,4 @@
-local colorscheme = "fleet"
+local colorscheme = "gruvbox"
 vim.cmd(string.format("colorscheme %s", colorscheme))
 require("transparent")
 

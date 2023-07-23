@@ -58,11 +58,11 @@ return packer.startup(function(use)
   use { 'romgrk/barbar.nvim', config = "require('plugins.barbar')" }
   use "ahmedkhalf/project.nvim"
   use { "lewis6991/impatient.nvim", config = "require('plugins.impatient')" }
-  use {"RRethy/vim-illuminate"} -- highlight current word
+  use { "RRethy/vim-illuminate" } -- highlight current word
 
   -- Colorschemes
-  use { "morhetz/gruvbox" }
-  use {"razcoen/fleet.nvim"}
+  use { "ellisonleao/gruvbox.nvim" }
+  use { "razcoen/fleet.nvim" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", config = "require('plugins.cmp')" } -- The completion plugin
@@ -91,7 +91,7 @@ return packer.startup(function(use)
   use 'towolf/vim-helm' -- sets the filetype to be helm
 
   -- Better go support
-  use {'ray-x/go.nvim', config = "require('plugins.go')"}
+  use { 'ray-x/go.nvim', config = "require('plugins.go')" }
   use 'ray-x/guihua.lua'
 
   -- Telescope
