@@ -1,8 +1,3 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-  return
-end
-
 local kind_icons = {
   Text = '',
   Method = '',
@@ -31,7 +26,8 @@ local kind_icons = {
   TypeParameter = '',
 }
 
-cmp.setup {
+local cmp = require("cmp")
+cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -67,15 +63,13 @@ cmp.setup {
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        -- nvim_lua = "[LUA]",
+        nvim_lua = "[LUA]",
         luasnip = "[Snippet]",
-        -- buffer = "[Buffer]",
         path = "[Path]",
+        buffer = "[Buffer]",
       })[entry.source.name]
       return vim_item
     end,
@@ -87,30 +81,31 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
   },
-}
- -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-    }, {
-      { name = 'buffer' },
-    })
-  })
+})
 
-  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-      { name = 'buffer' }
-    }
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'git' },   -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+  }, {
+    { name = 'buffer' },
   })
+})
 
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
   })
+})

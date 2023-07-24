@@ -24,7 +24,6 @@ local config = {
     "CursorLineNr",
     "EndOfBuffer",
   },
-  -- extra_groups = "all",
   exclude = {},
 }
 
