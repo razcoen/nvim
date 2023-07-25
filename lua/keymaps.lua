@@ -22,6 +22,9 @@ vim.keymap.set("n", "<S-Tab>", ":BufferPrevious<CR>", {})
 vim.keymap.set("n", "<S-q>", ":BufferClose!<CR>", {})
 vim.keymap.set("n", "<C-q>", ":q<CR>", {})
 
+-- Search
+vim.keymap.set("n", "<CR>", ":set hlsearch!<CR>", {})
+
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", {})
 vim.keymap.set("v", ">", ">gv", {})
