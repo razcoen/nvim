@@ -1,6 +1,9 @@
 vim.g.gruvbox_contrast_dark = 'hard'
 vim.cmd("colorscheme gruvbox")
 
+-- Sets the hover window background to regular background
+vim.cmd [[ highlight link NormalFloat Normal ]]
+
 -- Errors
 vim.api.nvim_exec("highlight! LspDiagnosticsVirtualTextError guifg=Red gui=bold", false)
 vim.api.nvim_exec("highlight! DiagnosticVirtualTextError guifg=Red gui=bold", false)
