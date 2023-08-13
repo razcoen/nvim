@@ -1,5 +1,5 @@
-vim.cmd("colorscheme gruvbox")
-require("transparent")
+vim.g.gruvbox_contrast_dark = 'hard'
+vim.cmd("colorscheme kanagawa")
 
 -- Errors
 vim.api.nvim_exec("highlight! LspDiagnosticsVirtualTextError guifg=Red gui=bold", false)

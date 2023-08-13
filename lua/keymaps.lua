@@ -19,7 +19,7 @@ vim.keymap.set("n", "<S-Right>", ":vertical resize +2<CR>", {})
 -- Buffers
 vim.keymap.set("n", "<Tab>", ":BufferNext<CR>", {})
 vim.keymap.set("n", "<S-Tab>", ":BufferPrevious<CR>", {})
-vim.keymap.set("n", "<S-q>", ":BufferClose!<CR>", {})
+vim.keymap.set("n", "<S-q>", ":b#|bd#<CR>", {})
 vim.keymap.set("n", "<C-q>", ":q<CR>", {})
 
 -- Search

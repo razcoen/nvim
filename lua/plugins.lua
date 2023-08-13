@@ -24,8 +24,9 @@ return require('packer').startup(function(use)
 
   -- Colorschemes
   use({
-    "ellisonleao/gruvbox.nvim",
-    "razcoen/fleet.nvim"
+    "morhetz/gruvbox",
+    "razcoen/fleet.nvim",
+    "rebelot/kanagawa.nvim",
   })
 
   -- LSP Support
@@ -79,5 +80,4 @@ return require('packer').startup(function(use)
     run = ":TSUpdate",
     config = function() require('plugins.treesitter') end,
   })
-
 end)

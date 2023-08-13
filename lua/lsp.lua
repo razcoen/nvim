@@ -3,6 +3,9 @@ require("mason").setup()
 local mason_lspconfig = require('mason-lspconfig')
 local lspconfig = require('lspconfig')
 
+local helm = require('lib.helm')
+helm.setup()
+
 mason_lspconfig.setup({ automatic_installation = true })
 mason_lspconfig.setup_handlers({
   function(server_name)
@@ -40,7 +43,7 @@ mason_lspconfig.setup_handlers({
         vim.keymap.set("n", "<leader>cf", function() vim.lsp.buf.format() end, opts)
         vim.keymap.set("v", "<leader>ca", function() vim.lsp.buf.range_code_action() end, opts)
         vim.keymap.set("v", "<leader>cf", function() vim.lsp.buf.range_formatting() end, opts)
-        require('lib.helm').disable_diagnostics(client, bufnr)
+        helm.disable_diagnostics(client, bufnr)
       end,
       capabilities = require('cmp_nvim_lsp').default_capabilities()
     }
