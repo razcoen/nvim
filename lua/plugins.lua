@@ -49,22 +49,6 @@ return require('packer').startup(function(use)
   -- Sets the filetype to be helm
   use({ 'towolf/vim-helm' })
 
-  -- Better go support
-  use({
-    'ray-x/go.nvim',
-    config = function()
-      require('go').setup({
-        luasnip = true,
-        textobjects = false,
-      })
-    end,
-    requires = {
-      'ray-x/guihua.lua',
-      'neovim/nvim-lspconfig',
-      'nvim-treesitter/nvim-treesitter'
-    }
-  })
-
   -- Telescope
   use({
     'nvim-telescope/telescope.nvim',
