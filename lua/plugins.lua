@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
 
   -- Git
   use({ "lewis6991/gitsigns.nvim", config = function() require('gitsigns').setup({}) end })
+  use({ "tpope/vim-fugitive" })
 
   -- Colorschemes
   use({
@@ -64,4 +65,11 @@ return require('packer').startup(function(use)
     run = ":TSUpdate",
     config = function() require('plugins.treesitter') end,
   })
+
+  -- Markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
 end)
