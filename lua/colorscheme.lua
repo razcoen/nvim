@@ -1,5 +1,5 @@
 vim.g.gruvbox_contrast_dark = 'hard'
-vim.cmd("colorscheme fleet")
+vim.cmd("colorscheme gruvbox")
 
 -- Sets the hover window background to regular background
 vim.cmd [[ highlight link NormalFloat Normal ]]
