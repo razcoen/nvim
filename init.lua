@@ -1,5 +1,3 @@
-require "settings"
-require "keymaps"
-require "plugins"
-require "lsp"
-require "colorscheme"
+require("config.options")
+require("config.keymaps")
+require("config.lazy")

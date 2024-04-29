@@ -1,3 +1,10 @@
+vim.g.mapleader = "\\"
+
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+
+vim.opt.shell = "zsh"
+
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.undofile = true
@@ -11,6 +18,7 @@ vim.opt.splitright = true
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.expandtab = true
+vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
