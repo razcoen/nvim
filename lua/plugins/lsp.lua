@@ -23,7 +23,6 @@ return {
           "earthlyls",
           "gradle_ls",
           "graphql",
-          "groovyls",
           "helm_ls",
           "jsonls",
           "jqls",
