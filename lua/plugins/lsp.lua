@@ -42,7 +42,6 @@ return {
           "vimls",
           "yamlls",
 
-          "clangd",
           "java_language_server",
           "rust_analyzer",
 
