@@ -17,7 +17,6 @@ return {
           "bashls",
           "bufls",
           "cmake",
-          "diagnosticls",
           "dockerls",
           "docker_compose_language_service",
           "earthlyls",
