@@ -1,4 +1,5 @@
 vim.g.mapleader = "\\"
+vim.g.gitdir = "~/git"
 
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
