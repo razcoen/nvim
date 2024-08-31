@@ -7,10 +7,4 @@ return {
       vim.cmd([[ colorscheme fleet ]])
     end,
   },
-  {
-    "xiyaowong/transparent.nvim",
-    config = function()
-      vim.cmd([[ TransparentEnable ]])
-    end,
-  }
 }
