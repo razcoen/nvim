@@ -25,6 +25,10 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldlevelstart = 99 
+
 vim.opt.updatetime = 50
 
 vim.opt.number = true
