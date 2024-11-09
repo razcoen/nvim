@@ -16,7 +16,6 @@ return {
         automatic_installation = true,
         ensure_installed = {
           "bashls",
-          "bufls",
           "cmake",
           "dockerls",
           "docker_compose_language_service",
@@ -52,7 +51,6 @@ return {
           "ember",
           "html",
           "htmx",
-          "tsserver",
           "tailwindcss",
           "vuels",
 
@@ -66,8 +64,8 @@ return {
       helm.setup()
 
       mason_lspconfig.setup_handlers({
-        function(server_name)
-          lspconfig[server_name].setup {
+        function(server)
+          lspconfig[server].setup {
             settings = {
               gopls = {
                 hints = {
@@ -105,7 +103,7 @@ return {
               helm.disable_diagnostics(client, bufnr)
               terraform.fix_terraform_vars_filetype(client, bufnr)
             end,
-            capabilities = require('blink.cmp').get_lsp_capabilities(require('cmp_nvim_lsp').default_capabilities())
+            capabilities = require('cmp_nvim_lsp').default_capabilities()
           }
         end,
       })
