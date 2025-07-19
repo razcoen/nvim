@@ -1,9 +1,5 @@
 # nvim
 
-<a href="https://dotfyle.com/razcoen/nvim"><img src="https://dotfyle.com/razcoen/nvim/badges/plugins?style=flat" /></a>
-<a href="https://dotfyle.com/razcoen/nvim"><img src="https://dotfyle.com/razcoen/nvim/badges/leaderkey?style=flat" /></a>
-<a href="https://dotfyle.com/razcoen/nvim"><img src="https://dotfyle.com/razcoen/nvim/badges/plugin-manager?style=flat" /></a>
-
 Personal Neovim configuration powered by Lua.
 
 
