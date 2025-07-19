@@ -5,7 +5,6 @@ return {
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
       { 'towolf/vim-helm' },
-      { 'saghen/blink.cmp' },
     },
     config = function()
       require("mason").setup()
@@ -18,6 +17,7 @@ return {
       local terraform = require('lib.lsp.terraform')
       helm.setup()
 
+      -- ------------------------------------------------------------
       -- Completion, diagnostics and keymaps for LSP related commands
       -- ------------------------------------------------------------
       vim.lsp.config('*', {
@@ -41,6 +41,7 @@ return {
         capabilities = require('cmp_nvim_lsp').default_capabilities()
       })
 
+      -- ------------------------------------------------------------
       -- Language specific configurations
       -- ------------------------------------------------------------
       vim.lsp.config('lua_ls', {
@@ -52,6 +53,7 @@ return {
           },
       }})
 
+      -- ------------------------------------------------------------
       -- Hover configuration
       -- ------------------------------------------------------------
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
