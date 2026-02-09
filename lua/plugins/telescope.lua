@@ -19,16 +19,16 @@ return {
         end
       end
 
-      vim.keymap.set('n', '<leader>g', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end)
-      vim.keymap.set('n', '<leader>lg', function() builtin.live_grep({}) end, {})
-      vim.keymap.set('n', 'gs', function() builtin.live_grep({}) end, {})
-      vim.keymap.set('n', '<leader>fg', function() project_files({ find_command = find_command }) end, {})
-      vim.keymap.set('n', 'gf', function() project_files({ find_command = find_command }) end, {})
+      vim.keymap.set('n', '<leader>g', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, { desc = "Grep string" })
+      vim.keymap.set('n', '<leader>lg', function() builtin.live_grep({}) end, { desc = "Live grep" })
+      vim.keymap.set('n', 'gs', function() builtin.live_grep({}) end, { desc = "Live grep" })
+      vim.keymap.set('n', '<leader>fg', function() project_files({ find_command = find_command }) end, { desc = "Project files" })
+      vim.keymap.set('n', 'gf', function() project_files({ find_command = find_command }) end, { desc = "Project files" })
       vim.keymap.set('n', '<leader>ff',
-        function() builtin.find_files({ find_command = find_command, search_dirs = { vim.g.gitdir } }) end, {})
-      vim.keymap.set("n", "<leader>fb", function() builtin.buffers({}) end, {})
-      vim.keymap.set("n", "<leader>fh", function() builtin.help_tags({}) end, {})
-      vim.keymap.set('n', '<leader>fk', function() builtin.keymaps({}) end, {})
+        function() builtin.find_files({ find_command = find_command, search_dirs = { vim.g.gitdir } }) end, { desc = "Find files" })
+      vim.keymap.set("n", "<leader>fb", function() builtin.buffers({}) end, { desc = "Buffers" })
+      vim.keymap.set("n", "<leader>fh", function() builtin.help_tags({}) end, { desc = "Help tags" })
+      vim.keymap.set('n', '<leader>fk', function() builtin.keymaps({}) end, { desc = "Keymaps" })
 
       require('telescope').setup({
         defaults = {
