@@ -10,6 +10,9 @@ return {
           update_cwd = true,
           ignore_list = {},
         },
+        filesystem_watchers = {
+          enable = true,
+        },
         git = {
           enable = false,
           ignore = false,
